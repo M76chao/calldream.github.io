@@ -1,68 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="location.href">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 </head>
 <body>
     <a href="./word.html">作文</a>
-    <a href="./xin.html">心</a>
-    <a href="./1.php">php</a>
-    <a href="./3.html">尝试php2</a> 
+    <a href="./xin.html">心</a><br>
+第一次php嘗試失敗，證明github上面的確不能運行php類的後臺文件<br>
+這是第二次嘗試<br><br><br><br>
+<a href="ping.html">评论</a>
+<br>
+8.17日更新开场动画，<a href="dest/welcome.html">点此观看</a>
+
+
+<!-- <div id="container"></div>
+
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: 'calldream',
+  repo: '',//dream1198526267
+  oauth: {
+    client_id: '5f38386984dc33fb2b0d',
+    client_secret: '96cae833531795d6cb2a0d4aca15bdaae94b008f',
+  },
+})
+gitment.render('container')
+</script>
+ -->
+
+
+
+
+
+
+
+
 </body>
 <script>
-    function ajax() {
-        var ajaxData = {
-            type: arguments[0].type || "GET",
-            url: arguments[0].url || "",
-            async: arguments[0].async || "true",
-            data: arguments[0].data || null,
-            dataType: arguments[0].dataType || "text",
-            contentType: arguments[0].contentType || "application/x-www-form-urlencoded",
-            beforeSend: arguments[0].beforeSend || function() {},
-            success: arguments[0].success || function() {},
-            error: arguments[0].error || function() {}
-        }
-        ajaxData.beforeSend()
-        var xhr = createxmlHttpRequest();
-        xhr.responseType = ajaxData.dataType;
-        xhr.open(ajaxData.type, ajaxData.url, ajaxData.async);
-        xhr.setRequestHeader("Content-Type", ajaxData.contentType);
-        xhr.send(convertData(ajaxData.data));
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-                    ajaxData.success(xhr.response)
-                } else {
-                    ajaxData.error()
-                }
-            }
-        }
-    }
 
-    function createxmlHttpRequest() {
-        if (window.ActiveXObject) {
-            return new ActiveXObject("Microsoft.XMLHTTP");
-        } else if (window.XMLHttpRequest) {
-            return new XMLHttpRequest();
-        }
-    }
-
-    function convertData(data) {
-        if (typeof data === 'object') {
-            var convertResult = "";
-            for (var c in data) {
-                convertResult += c + "=" + data[c] + "&";
-            }
-            convertResult = convertResult.substring(0, convertResult.length - 1)
-            return convertResult;
-        } else {
-            return data;
-        }
-    }
 </script>
 
 </html>
