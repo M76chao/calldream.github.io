@@ -1,48 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<style>
-	body,html {
-		border: none;
-		padding: none;
-		overflow: hidden;
-	}
-	div {
-		text-align: center;
-		margin-top: 300px;
-	}
-		canvas {
-			opacity: 1;
-			position: absolute;
-			transform: rotate(0);
-			transition: all 2s linear;
-		}
-		.can {
-			opacity: 0;
-			transform: rotate(-720deg);
-		}
-		.back {
-			display: block;
-		}
-		.none {
-			display: none ;
-		}
-	</style>
-	<script>
-		function welcome (){
-
+!function () {
 		var can = document.querySelector("canvas");
 		can.width = window.innerWidth*2;
 		can.style.width=window.innerWidth-20+"px";
 		can.height = window.innerHeight*2;
 		can.style.height = window.innerHeight-20+"px";
-
-
-
-
 		var ctx = can.getContext("2d");
 		var x,y,x0,y0,x1,y1,w,h,r,s,d,c,a,b,f,g,f1,g1,o,o1,o2,o3,o4,dx,dy; 
 		var k=["f","e","d","c","b","a",9,8,7,6,5,4,3,2,1,0];//太极优化
@@ -195,38 +156,12 @@
 					}else {
 						ctx.clearRect(0,0,w,h);//清除画布
 						c太极();
-						clearInterval(time);/*console.log(2);*/  //清除定时器后不意味着函数中的return
+						clearInterval(time);
 						can.className="can";
-						setTimeout(function(){
-							can.className = "none";
-							document.querySelector("div").className="black";
-						},2000)
-						
+						/*console.log(2);*/  //清除定时器后不意味着函数中的return
 					}
 				}
 			}	
 				
 		},25)
-		}
-	</script>
-</head>
-<body>
-	<canvas></canvas>
-	<br>
-	<div class="none">点此刷新，再看一次（不耗流量）
-		<br/>这个还有待完善，想把线条换成黑色的锁链，但是锁链的细节一直处理不好
-	</div>
-	<script>
-		!welcome()();
-	</script>
-</body>
-<script>
-	var div = document.querySelector("div");
-	div.onclick=function(){
-		document.querySelector("div").className="none";
-		document.querySelector("canvas").className="";
-		welcome();
-	}
-	
-</script>
-</html>
+	}();
