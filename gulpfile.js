@@ -26,7 +26,7 @@ gulp.task("style", function() {
         .pipe(gulp.dest("./dest/css"))
 })
 gulp.task("html", function() {
-    gulp.src(["./src/*.html"])
+    gulp.src(["./world/*.html"])
         .pipe(htmlmin({ removeComments: true, collapseWhitespace: true, collapseBooleanAttributes: true, removeEmptyAttributes: true, removeScriptTypeAttributes: true, removeStyleLinkTypeAttributes: true, minifyCSS: true, minifyJS: true }))
         .pipe(gulp.dest("./dest"))
 })

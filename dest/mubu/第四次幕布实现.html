@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			    margin:0;
+			    padding:0;
+			    outline:none;
+			    box-sizing:border-box;
+		}
+		html,body{
+		    width:100%;
+		    height:100%;
+		}
+		#app {
+			width:80%;
+		    min-height: 100%;
+		    margin:0 auto;
+		}
+		#app .title {
+			border-bottom: 1px solid green;
+		    padding:0 5%;
+		}
+		#app .title input[type="text"]{
+		    height:50px;
+		    width:80%;
+		    border:none;
+		    font-size:20px;
+		}
+		.a {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+    <template id="bb">
+    	<div>
+    		<template v-for = "(v,i) in bval">
+				<div v-if="typeof v !=='object'" 
+					 @keydown='keydown($event)'
+					 @keyup='keyup(i,$event)'
+					 class='a'
+					 :style="{marginLeft: nm+'px'}"
+					 autocapitalize="off" 
+					 contenteditable="true"
+					 v-focus
+					>{{v}}</div>
+				<cc  v-else  :value.sync="bval[i]" :num="nm" :index="i" @stab="stab"></cc>
+			</template>
+    	</div>
+    </template>
+	<div id="app">
+
+		<div class="title">
+            <input type="text" placeholder="无标题">
+        </div>
+
+        <div class="cantent">
+        	<bb :value.sync='arr' :num='num'></bb>
+        </div>
+	</div>
+</body>
+<script src="vue.js"></script>
+<script src="bb.js"></script>
+<script>
+
+	Vue.directive('focus', {
+			  inserted: function (el) {
+			      el.focus()
+			  }
+	});
+	var app = new Vue({
+		el:"#app",
+		data:{
+			arr:[1,[2],3,[4],5,[6,[7]]],
+			num:1
+		},
+		components:{bb:bb},
+
+	})
+	 
+</script>
+</html>

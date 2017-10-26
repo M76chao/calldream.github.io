@@ -11,6 +11,7 @@
             text-indent: 2em;
             max-width: 700px;
             margin: 50px auto;
+            padding-bottom: 200px;
         }
         li {
             text-indent: 0;
@@ -33,7 +34,8 @@
     <li>2017.8.21 ↓</li>
     <p>重新排版，确定这么丢人的主页</p>
     <li>2017.8.22 ↓</li>
-    <p>新增简历，<a href="简历压缩/">简历</a></p>
+    <p>新增简历，<a href="简历压缩/">简历</a>&nbsp;&nbsp;（下载doc格式：<a href="./孟令超-前端-18937391708.doc">简历下载</a>）
+    </p>
     <li>2017.8.23 &nbsp;↓</li>
     <p>第一次尝试适配手机端：<a href="简历压缩/">简历</a></p>
     <p>适配移动端失败，此项目暂时搁浅，简历已经投，需求不是特别的着急，有空的时候重构此简历</p>
@@ -43,5 +45,36 @@
     <li>2017.9.9 &nbsp;↓</li>
     <p>阿里云服务器端配置完成，域名正在备案，应该一周内可以审批，服务器配置步骤等到域名备案下来一起写</p>
     <p>增加 git的使用笔记，地址：<a href="https://github.com/calldream/calldream.github.io/blob/master/git.md">git.md</a></p>
+    <li>2017.9.13 &nbsp;↓</li>
+    <p>阿里云域名备案成功，域名为：&nbsp; <a href="www.453500.top"><u>www.453500.top</u></a>，奈何周围事情一直很忙，也没有特别好的思路，所以没有做装修</p>
+    <li>2017.9.25 &nbsp;↓</li>
+    <p>学习了混合App的封装，本来想上传一个之前写好的扫雷，但是觉得也许上传教程步骤也许更有意义，这是一个非常大的课题，暂时没有时间整理，诶……</p>
+    <li>2017.10.15 &nbsp;↓</li>
+    <p>依据Vue官方文档，使用幕布网整理Vue的笔记，<a href="https://mubu.com/doc/PWQV_HDvo">Vue正文</a>，<a href="https://mubu.com/doc/3BIGZGqgko">Vue组件</a></p>
+    <li>2017.10.17 &nbsp;↓</li>
+    <p>借助幕布网，上传之前整理的css3文档：<a href="https://mubu.com/doc/1BKCMvrHvo">css_3</a></p>
+    <li>2017.10.20 &nbsp;↓</li>
+    <p>使用Vue，尝试幕布网的逻辑实现，失败作品：</p>
+
+    
+    
+
 </body>
+<script>
+    var funDownload = function (content, filename) {
+        // 创建隐藏的可下载链接
+        var eleLink = document.createElement('a');
+        eleLink.download = filename;
+        eleLink.style.display = 'none';
+        // 字符内容转变成blob地址
+        var blob = new Blob([content]);
+        eleLink.href = URL.createObjectURL(blob);
+        // 触发点击
+        document.body.appendChild(eleLink);
+        eleLink.click();
+        // 然后移除
+        document.body.removeChild(eleLink);
+    };
+
+</script>
 </html>
