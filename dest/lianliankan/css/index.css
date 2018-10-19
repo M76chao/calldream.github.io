@@ -1,0 +1,57 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#conter {
+  height: 400px;
+}
+#conter .x {
+  display: flex;
+  height: 2em;
+  width: 100%;
+  justify-content: space-between;
+}
+#conter .x .over {
+  pointer-events: none;
+  cursor: default;
+  background-color: #fff !important;
+}
+#conter .x #focus {
+  border: 5px solid #fff;
+}
+#conter .x .bgc {
+  border: none;
+}
+#conter .x > div {
+  width: 8.5%;
+  border: 1px solid rgba(50, 50, 50, 0.2);
+  background-color: #000;
+  box-sizing: border-box;
+}
+#conter .x .a {
+  background-color: #fa0000;
+}
+#conter .x .b {
+  background-color: #0ff000;
+}
+#conter .x .c {
+  background-color: #f000f0;
+}
+#conter .x .d {
+  background-color: #0000ff;
+}
+#conter .x .e {
+  background-color: #6A682D;
+}
+#conter .x .f {
+  background-color: #8769BA;
+}
+#conter .x .g {
+  background-color: #BB308A;
+}
+#conter .x .h {
+  background-color: #4D4E96;
+}
